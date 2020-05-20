@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
                 point = true;
                 textView.setText(R.string.value);
                 textView.append(button.getText());
-            } else {
-                textView.setText("");
             }
         }
         if (button.getText().equals(",")) {
@@ -47,7 +45,12 @@ public class MainActivity extends AppCompatActivity {
                 textView.append(button.getText());
             }
         } else {
-            textView.append(button.getText());
+            if (number.length() == 0 && button.getText().equals("0")) {
+                textView.setText("");
+            } else {
+
+                textView.append(button.getText());
+            }
         }
     }
 
